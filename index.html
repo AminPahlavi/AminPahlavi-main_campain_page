@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="فهرست بسته‌های حمایتی برای زندانیان در خطر اعدام" name="description"/>
+<title>فهرست بسته‌های حمایتی | صدای زندانیان در خطر اعدام</title>
+<style>
+:root {
+  --bg:#06101d;
+  --panel:#0d1b2c;
+  --panel2:#13263c;
+  --text:#f7f9fc;
+  --muted:#aab7c9;
+  --line:#263b58;
+  --accent:#ec3d4b;
+  --accent2:#ff6b75;
+  --blue:#59a9ff;
+  --shadow:0 18px 55px rgba(0,0,0,.30);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 85% -10%,rgba(50,100,165,.36),transparent 31%),
+    radial-gradient(circle at 10% 15%,rgba(236,61,75,.12),transparent 25%),
+    linear-gradient(180deg,#06101d 0%,#091523 48%,#06101d 100%);
+  color:var(--text);
+  font-family:Tahoma,"Segoe UI",Arial,sans-serif;
+  line-height:1.7;
+}
+a{color:inherit}
+.wrap{width:min(1240px,calc(100% - 26px));margin:auto}
+.hero{padding:42px 0 24px}
+.hero-panel{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:clamp(24px,5vw,52px);
+  background:linear-gradient(135deg,rgba(19,38,60,.97),rgba(9,21,35,.97));
+  box-shadow:var(--shadow);
+}
+.hero-panel::after{
+  content:"";
+  position:absolute;
+  width:330px;height:330px;
+  left:-105px;top:-125px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(236,61,75,.23),transparent 67%);
+  pointer-events:none;
+}
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 13px;
+  border-radius:999px;
+  border:1px solid rgba(236,61,75,.45);
+  background:rgba(236,61,75,.12);
+  color:#ffb9be;
+  font-weight:800;
+  font-size:.9rem;
+}
+h1{
+  margin:17px 0 10px;
+  font-size:clamp(2rem,6vw,4.7rem);
+  line-height:1.2;
+  letter-spacing:-.02em;
+  max-width:940px;
+}
+.hero-text{
+  max-width:850px;
+  margin:0;
+  color:#d7e0ec;
+  font-size:clamp(1rem,2vw,1.14rem);
+}
+.hero-stats{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+.stat{
+  min-width:145px;
+  padding:12px 15px;
+  border-radius:15px;
+  background:rgba(7,17,31,.72);
+  border:1px solid var(--line);
+}
+.stat b{display:block;font-size:1.55rem;line-height:1.2}
+.stat span{color:var(--muted);font-size:.85rem}
+.search-section{
+  position:sticky;
+  top:0;
+  z-index:20;
+  padding:12px 0;
+  background:rgba(6,16,29,.88);
+  backdrop-filter:blur(16px);
+  border-block:1px solid rgba(38,59,88,.72);
+}
+.search-row{display:flex;gap:10px;align-items:center}
+.search-box{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#0a1727;
+  color:#fff;
+  font:inherit;
+  padding:13px 15px;
+  outline:none;
+}
+.search-box:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(89,169,255,.12)}
+.count-label{white-space:nowrap;color:var(--muted);font-size:.9rem}
+.main{padding:25px 0 50px}
+.notice{
+  margin-bottom:18px;
+  padding:13px 16px;
+  border-radius:15px;
+  border:1px solid #2d4564;
+  border-right:5px solid var(--accent);
+  background:#0d1b2e;
+  color:#dbe4ef;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:17px;
+}
+.campaign-card{
+  min-width:0;
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#101e31,#0b1727);
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.campaign-card:hover{
+  transform:translateY(-4px);
+  border-color:#46678e;
+  box-shadow:0 18px 40px rgba(0,0,0,.28);
+}
+.card-link{display:block;text-decoration:none;height:100%}
+.image-frame{
+  position:relative;
+  aspect-ratio:10/7;
+  overflow:hidden;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.image-frame img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#fff;
+  transition:transform .25s ease;
+}
+.campaign-card:hover .image-frame img{transform:scale(1.018)}
+.open-mark{
+  position:absolute;
+  left:12px;
+  top:12px;
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(6,16,29,.84);
+  border:1px solid rgba(255,255,255,.25);
+  font:700 1.05rem/1 Arial,sans-serif;
+}
+.card-copy{padding:17px}
+.card-copy h2{
+  margin:0;
+  font-size:clamp(1.25rem,2.4vw,1.65rem);
+  line-height:1.35;
+}
+.card-copy p{
+  margin:4px 0 15px;
+  color:#a9c9ed;
+  font-family:"Segoe UI",Arial,sans-serif;
+  font-size:.93rem;
+}
+.open-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:39px;
+  padding:8px 13px;
+  border-radius:11px;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;
+  font-weight:800;
+  font-size:.86rem;
+}
+.empty{
+  display:none;
+  padding:50px 18px;
+  text-align:center;
+  color:var(--muted);
+  border:1px dashed var(--line);
+  border-radius:18px;
+}
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 0 40px;
+  color:#92a3ba;
+  text-align:center;
+  font-size:.88rem;
+}
+@media(max-width:980px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .hero{padding-top:14px}
+  .hero-panel{border-radius:20px;padding:21px 17px}
+  .search-row{align-items:stretch;flex-direction:column}
+  .count-label{text-align:center}
+  .grid{grid-template-columns:1fr;gap:14px}
+  .image-frame{aspect-ratio:10/7}
+  .card-copy{padding:15px}
+}
+
+.signature-strip{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 126px;
+  gap:18px;
+  align-items:center;
+  margin-bottom:20px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(236,61,75,.18),rgba(7,17,31,.78));
+  box-shadow:0 12px 34px rgba(0,0,0,.20);
+}
+.signature-copy{min-width:0}
+.signature-label{
+  display:block;
+  margin-bottom:5px;
+  color:#ffb9be;
+  font-size:.86rem;
+  font-weight:800;
+}
+.signature-link{
+  display:inline-block;
+  direction:ltr;
+  font-family:"Segoe UI",Arial,sans-serif;
+  font-size:clamp(1.05rem,2.2vw,1.42rem);
+  font-weight:900;
+  color:#fff;
+  text-decoration:none;
+  overflow-wrap:anywhere;
+}
+.signature-link:hover{text-decoration:underline}
+.signature-copy p{
+  margin:7px 0 0;
+  color:#dbe4ef;
+  font-size:.96rem;
+}
+.signature-photo-link{
+  display:block;
+  justify-self:start;
+  border-radius:18px;
+  overflow:hidden;
+  border:3px solid rgba(255,255,255,.90);
+  box-shadow:0 10px 26px rgba(0,0,0,.28);
+}
+.signature-photo{
+  display:block;
+  width:126px;
+  height:126px;
+  object-fit:cover;
+  object-position:center;
+}
+@media(max-width:620px){
+  .signature-strip{
+    grid-template-columns:1fr 96px;
+    gap:12px;
+    padding:12px;
+    border-radius:18px;
+  }
+  .signature-photo{width:96px;height:96px}
+  .signature-photo-link{border-radius:14px}
+  .signature-copy p{font-size:.88rem}
+}
+
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="wrap">
+<section class="hero-panel">
+<section aria-label="کانال تلگرام" class="signature-strip">
+<div class="signature-copy">
+<span class="signature-label">کانال رسمی مجموعه</span>
+<a class="signature-link" href="https://t.me/almo_mo" rel="noopener noreferrer" target="_blank">
+      https://t.me/almo_mo
+    </a>
+<p>همه پوسترها و تصاویر آماده مربوط به این افراد در کانال تلگرام ما قرار داده شده است.</p>
+</div>
+<a aria-label="ورود به کانال تلگرام" class="signature-photo-link" href="https://t.me/almo_mo" rel="noopener noreferrer" target="_blank">
+<img alt="تصویر امضای کانال" class="signature-photo" src="assets/almo_signature.jpg"/>
+</a>
+</section>
+<span class="kicker">فهرست مرکزی بسته‌های حمایتی</span>
+<h1>صدای زندانیان در خطر اعدام باشیم</h1>
+<p class="hero-text">برای ورود به بسته هر فرد یا پرونده، روی تصویر، نام یا دکمه همان کارت بزنید.</p>
+</section>
+</div>
+</header>
+<section class="search-section">
+<div class="wrap">
+<div class="search-row">
+<input autocomplete="off" class="search-box" id="search" placeholder="جست‌وجوی نام به فارسی یا انگلیسی" type="search"/>
+<span class="count-label" id="count">24 بسته نمایش داده می‌شود</span>
+</div>
+</div>
+</section>
+<main class="main">
+<div class="wrap">
+<section class="grid" id="grid">
+
+<article class="campaign-card" data-search="مهدی روشنی Mehdi Roshani">
+<a aria-label="باز کردن بسته حمایتی مهدی روشنی" class="card-link" href="campaigns/mehdi-roshani/index.html">
+<div class="image-frame">
+<img alt="مهدی روشنی" loading="lazy" src="assets/mehdi-roshani.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>مهدی روشنی</h2>
+<p dir="ltr">Mehdi Roshani</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="کاوه عربیان Kaveh Arabian">
+<a aria-label="باز کردن بسته حمایتی کاوه عربیان" class="card-link" href="campaigns/kaveh-arabian/index.html">
+<div class="image-frame">
+<img alt="کاوه عربیان" loading="lazy" src="assets/kaveh-arabian.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>کاوه عربیان</h2>
+<p dir="ltr">Kaveh Arabian</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="میلاد، مهرداد و علی بویری Milad, Mehrdad &amp; Ali Boyeri">
+<a aria-label="باز کردن بسته حمایتی میلاد، مهرداد و علی بویری" class="card-link" href="campaigns/boyeri-brothers/index.html">
+<div class="image-frame">
+<img alt="میلاد، مهرداد و علی بویری" loading="lazy" src="assets/boyeri-brothers.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>میلاد، مهرداد و علی بویری</h2>
+<p dir="ltr">Milad, Mehrdad &amp; Ali Boyeri</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="بنیامین نقدی Benyamin Naghdi">
+<a aria-label="باز کردن بسته حمایتی بنیامین نقدی" class="card-link" href="campaigns/benyamin-naghdi/index.html">
+<div class="image-frame">
+<img alt="بنیامین نقدی" loading="lazy" src="assets/benyamin-naghdi.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>بنیامین نقدی</h2>
+<p dir="ltr">Benyamin Naghdi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="احمدرضا سعیدی Ahmadreza Saeedi">
+<a aria-label="باز کردن بسته حمایتی احمدرضا سعیدی" class="card-link" href="campaigns/ahmadreza-saeedi/index.html">
+<div class="image-frame">
+<img alt="احمدرضا سعیدی" loading="lazy" src="assets/ahmadreza-saeedi.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>احمدرضا سعیدی</h2>
+<p dir="ltr">Ahmadreza Saeedi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="مهنام نواب صفوی Mehnam Navab Safavi">
+<a aria-label="باز کردن بسته حمایتی مهنام نواب صفوی" class="card-link" href="campaigns/mehnam-navab-safavi/index.html">
+<div class="image-frame">
+<img alt="مهنام نواب صفوی" loading="lazy" src="assets/mehnam-navab-safavi.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>مهنام نواب صفوی</h2>
+<p dir="ltr">Mehnam Navab Safavi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="علیرضا رئیسی و شروین باقریان Alireza Raeisi &amp; Shervin Bagherian">
+<a aria-label="باز کردن بسته حمایتی علیرضا رئیسی و شروین باقریان" class="card-link" href="campaigns/shervin-alireza/index.html">
+<div class="image-frame">
+<img alt="علیرضا رئیسی و شروین باقریان" loading="lazy" src="assets/shervin-alireza.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>علیرضا رئیسی و شروین باقریان</h2>
+<p dir="ltr">Alireza Raeisi &amp; Shervin Bagherian</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="قائم حسینی، امیرحسین ملکی و علی دشتی Qaem Hosseini, Amirhossein Maleki &amp; Ali Dashti">
+<a aria-label="باز کردن بسته حمایتی قائم حسینی، امیرحسین ملکی و علی دشتی" class="card-link" href="campaigns/ghaem-amirhossein-ali/index.html">
+<div class="image-frame">
+<img alt="قائم حسینی، امیرحسین ملکی و علی دشتی" loading="lazy" src="assets/ghaem-amirhossein-ali.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>قائم حسینی، امیرحسین ملکی و علی دشتی</h2>
+<p dir="ltr">Qaem Hosseini, Amirhossein Maleki &amp; Ali Dashti</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="نوید الیاسی Navid Elyasi">
+<a aria-label="باز کردن بسته حمایتی نوید الیاسی" class="card-link" href="campaigns/navid-elyasi/index.html">
+<div class="image-frame">
+<img alt="نوید الیاسی" loading="lazy" src="assets/navid-elyasi.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>نوید الیاسی</h2>
+<p dir="ltr">Navid Elyasi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="محبوبه شعبانی Mahboubeh Shabani">
+<a aria-label="باز کردن بسته حمایتی محبوبه شعبانی" class="card-link" href="campaigns/mahboubeh-shabani/index.html">
+<div class="image-frame">
+<img alt="محبوبه شعبانی" loading="lazy" src="assets/mahboubeh-shabani.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>محبوبه شعبانی</h2>
+<p dir="ltr">Mahboubeh Shabani</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="ابوالفضل ابراهیمی Abolfazl Ebrahimi">
+<a aria-label="باز کردن بسته حمایتی ابوالفضل ابراهیمی" class="card-link" href="campaigns/abolfazl-ebrahimi/index.html">
+<div class="image-frame">
+<img alt="ابوالفضل ابراهیمی" loading="lazy" src="assets/abolfazl-ebrahimi.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>ابوالفضل ابراهیمی</h2>
+<p dir="ltr">Abolfazl Ebrahimi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="حسین حق‌پرست Hossein Haghparast">
+<a aria-label="باز کردن بسته حمایتی حسین حق‌پرست" class="card-link" href="campaigns/hossein-haghparast/index.html">
+<div class="image-frame">
+<img alt="حسین حق‌پرست" loading="lazy" src="assets/hossein-haghparast.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>حسین حق‌پرست</h2>
+<p dir="ltr">Hossein Haghparast</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="مجتبی دهبندی و کیانوش همزه‌ای کازرونی Mojtaba Dehbandi &amp; Kianoush Hamzehei Kazerouni">
+<a aria-label="باز کردن بسته حمایتی مجتبی دهبندی و کیانوش همزه‌ای کازرونی" class="card-link" href="campaigns/mojtaba-kianoush/index.html">
+<div class="image-frame">
+<img alt="مجتبی دهبندی و کیانوش همزه‌ای کازرونی" loading="lazy" src="assets/mojtaba-kianoush.png"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>مجتبی دهبندی و کیانوش همزه‌ای کازرونی</h2>
+<p dir="ltr">Mojtaba Dehbandi &amp; Kianoush Hamzehei Kazerouni</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="احد شکوهیان Ahad Shokouhian">
+<a aria-label="باز کردن بسته حمایتی احد شکوهیان" class="card-link" href="campaigns/ahad-shokouhian/index.html">
+<div class="image-frame">
+<img alt="احد شکوهیان" loading="lazy" src="assets/ahad-shokouhian.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>احد شکوهیان</h2>
+<p dir="ltr">Ahad Shokouhian</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="اکبر و مهدی عرب‌زاده Akbar &amp; Mehdi Arabzadeh">
+<a aria-label="باز کردن بسته حمایتی اکبر و مهدی عرب‌زاده" class="card-link" href="campaigns/akbar-mehdi-arabzadeh/index.html">
+<div class="image-frame">
+<img alt="اکبر و مهدی عرب‌زاده" loading="lazy" src="assets/akbar-mehdi-arabzadeh.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>اکبر و مهدی عرب‌زاده</h2>
+<p dir="ltr">Akbar &amp; Mehdi Arabzadeh</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="مهدی ظریف Mehdi Zarif">
+<a aria-label="باز کردن بسته حمایتی مهدی ظریف" class="card-link" href="campaigns/mehdi-zarif/index.html">
+<div class="image-frame">
+<img alt="مهدی ظریف" loading="lazy" src="assets/mehdi-zarif.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>مهدی ظریف</h2>
+<p dir="ltr">Mehdi Zarif</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="مجید نیک‌اندیش Majid Nikandish">
+<a aria-label="باز کردن بسته حمایتی مجید نیک‌اندیش" class="card-link" href="campaigns/majid-nikandish/index.html">
+<div class="image-frame">
+<img alt="مجید نیک‌اندیش" loading="lazy" src="assets/majid-nikandish.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>مجید نیک‌اندیش</h2>
+<p dir="ltr">Majid Nikandish</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="برادران کیانی‌وفا Rahman, Arman &amp; Saman Kiani Vafa">
+<a aria-label="باز کردن بسته حمایتی برادران کیانی‌وفا" class="card-link" href="campaigns/kiani-vafa-brothers/index.html">
+<div class="image-frame">
+<img alt="برادران کیانی‌وفا" loading="lazy" src="assets/kiani-vafa-brothers.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>برادران کیانی‌وفا</h2>
+<p dir="ltr">Rahman, Arman &amp; Saman Kiani Vafa</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="قائم حسینی Ghaem Hosseini">
+<a aria-label="باز کردن بسته حمایتی قائم حسینی" class="card-link" href="campaigns/ghaem-hosseini/index.html">
+<div class="image-frame">
+<img alt="قائم حسینی" loading="lazy" src="assets/ghaem-hosseini.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>قائم حسینی</h2>
+<p dir="ltr">Ghaem Hosseini</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="علی دشتی Ali Dashti">
+<a aria-label="باز کردن بسته حمایتی علی دشتی" class="card-link" href="campaigns/ali-dashti/index.html">
+<div class="image-frame">
+<img alt="علی دشتی" loading="lazy" src="assets/ali-dashti.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>علی دشتی</h2>
+<p dir="ltr">Ali Dashti</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="امیرحسین ملکی Amirhossein Maleki">
+<a aria-label="باز کردن بسته حمایتی امیرحسین ملکی" class="card-link" href="campaigns/amirhossein-maleki/index.html">
+<div class="image-frame">
+<img alt="امیرحسین ملکی" loading="lazy" src="assets/amirhossein-maleki.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>امیرحسین ملکی</h2>
+<p dir="ltr">Amirhossein Maleki</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="امیرحسین موسوی Amirhossein Mousavi">
+<a aria-label="باز کردن بسته حمایتی امیرحسین موسوی" class="card-link" href="campaigns/amirhossein-mousavi/index.html">
+<div class="image-frame">
+<img alt="امیرحسین موسوی" loading="lazy" src="assets/amirhossein-mousavi.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>امیرحسین موسوی</h2>
+<p dir="ltr">Amirhossein Mousavi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="رومینا و ترانه رحیمی Romina &amp; Taraneh Rahimi">
+<a aria-label="باز کردن بسته حمایتی رومینا و ترانه رحیمی" class="card-link" href="campaigns/romina-taraneh-rahimi/index.html">
+<div class="image-frame">
+<img alt="رومینا و ترانه رحیمی" loading="lazy" src="assets/romina-taraneh-rahimi.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>رومینا و ترانه رحیمی</h2>
+<p dir="ltr">Romina &amp; Taraneh Rahimi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+<article class="campaign-card" data-search="ملیکا عزیزی Melika Azizi">
+<a aria-label="باز کردن بسته حمایتی ملیکا عزیزی" class="card-link" href="campaigns/melika-azizi/index.html">
+<div class="image-frame">
+<img alt="ملیکا عزیزی" loading="lazy" src="assets/melika-azizi.jpg"/>
+<span aria-hidden="true" class="open-mark">↗</span>
+</div>
+<div class="card-copy">
+<h2>ملیکا عزیزی</h2>
+<p dir="ltr">Melika Azizi</p>
+<span class="open-button">باز کردن بسته حمایتی</span>
+</div>
+</a>
+</article>
+</section>
+<div class="empty" id="empty">بسته‌ای با این نام پیدا نشد.</div>
+</div>
+</main>
+<footer>
+<div class="wrap"><a href="https://t.me/almo_mo" rel="noopener noreferrer" target="_blank">t.me/almo_mo</a></div>
+</footer>
+<script>
+const search = document.getElementById('search');
+const cards = Array.from(document.querySelectorAll('.campaign-card'));
+const count = document.getElementById('count');
+const empty = document.getElementById('empty');
+
+function normalize(value) {
+  return value
+    .toLowerCase()
+    .replace(/[يى]/g,'ی')
+    .replace(/ك/g,'ک')
+    .replace(/\u200c/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+
+function filterCards() {
+  const query = normalize(search.value);
+  let visible = 0;
+  cards.forEach(card => {
+    const haystack = normalize(card.dataset.search || '');
+    const show = !query || haystack.includes(query);
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  count.textContent = visible + ' بسته نمایش داده می‌شود';
+  empty.style.display = visible ? 'none' : 'block';
+}
+
+search.addEventListener('input', filterCards);
+</script>
+</body>
+</html>
