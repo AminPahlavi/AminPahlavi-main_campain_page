@@ -229,7 +229,7 @@ footer{
 
 .signature-strip{
   display:grid;
-  grid-template-columns:minmax(0,1fr) 126px;
+  grid-template-columns:minmax(0,1fr) minmax(190px,245px);
   gap:18px;
   align-items:center;
   margin-bottom:20px;
@@ -263,34 +263,46 @@ footer{
   color:#dbe4ef;
   font-size:.96rem;
 }
-.signature-photo-link{
+.signature-qr-link{
   display:block;
   justify-self:start;
-  border-radius:18px;
-  overflow:hidden;
-  border:3px solid rgba(255,255,255,.90);
-  box-shadow:0 10px 26px rgba(0,0,0,.28);
+  width:100%;
+  max-width:228px;
+  overflow:visible;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  transition:transform .18s ease;
 }
-.signature-photo{
+.signature-qr-link:hover{
+  transform:translateY(-2px) scale(1.01);
+}
+.signature-qr{
   display:block;
-  width:126px;
-  height:126px;
-  object-fit:cover;
-  object-position:center;
+  width:100%;
+  height:auto;
+  background:transparent;
+  filter:drop-shadow(0 15px 23px rgba(0,0,0,.38));
 }
 @media(max-width:620px){
   .signature-strip{
-    grid-template-columns:1fr 96px;
-    gap:12px;
-    padding:12px;
+    grid-template-columns:1fr;
+    gap:14px;
+    padding:14px;
     border-radius:18px;
   }
-  .signature-photo{width:96px;height:96px}
-  .signature-photo-link{border-radius:14px}
+  .signature-qr-link{
+    justify-self:center;
+    width:min(100%,220px);
+    max-width:220px;
+  }
+  .signature-copy{text-align:center}
   .signature-copy p{font-size:.88rem}
 }
 
 </style>
+
 </head>
 <body>
 <header class="hero">
@@ -304,8 +316,8 @@ footer{
     </a>
 <p>همه پوسترها و تصاویر آماده مربوط به این افراد در کانال تلگرام ما قرار داده شده است.</p>
 </div>
-<a aria-label="ورود به کانال تلگرام" class="signature-photo-link" href="https://t.me/almo_mo" rel="noopener noreferrer" target="_blank">
-<img alt="تصویر امضای کانال" class="signature-photo" src="assets/almo_signature.jpg"/>
+<a aria-label="اسکن کد QR کانال تلگرام" class="signature-qr-link" href="https://t.me/almo_mo" rel="noopener noreferrer" target="_blank">
+<img alt="کد QR کانال تلگرام ALMO_MO" class="signature-qr" src="assets/telegram_qr_almo_mo_precise.png"/>
 </a>
 </section>
 <span class="kicker">فهرست مرکزی بسته‌های حمایتی</span>
@@ -642,6 +654,7 @@ footer{
 <div class="empty" id="empty">بسته‌ای با این نام پیدا نشد.</div>
 </div>
 </main>
+
 <footer>
 <div class="wrap"><a href="https://t.me/almo_mo" rel="noopener noreferrer" target="_blank">t.me/almo_mo</a></div>
 </footer>
