@@ -5,8 +5,8 @@
 <meta content="0" http-equiv="Expires"/><meta content="no-cache" http-equiv="Pragma"/><meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/><meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#07111f" name="theme-color"/>
-<meta content="فهرست بسته‌های حمایتی برای زندانیان در خطر اعدام" name="description"/>
-<title>فهرست بسته‌های حمایتی | صدای زندانیان در خطر اعدام</title>
+<meta content="فهرست مرکزی کمپین‌های حمایت از زندانیان در معرض اعدام" name="description"/>
+<title>مرکز کمپین‌های حمایت | زندانیان در معرض اعدام</title>
 <style>
 :root {
   --bg:#06101d;
@@ -30,18 +30,19 @@ body{
     radial-gradient(circle at 10% 15%,rgba(236,61,75,.12),transparent 25%),
     linear-gradient(180deg,#06101d 0%,#091523 48%,#06101d 100%);
   color:var(--text);
-  font-family:Tahoma,"Segoe UI",Arial,sans-serif;
-  line-height:1.7;
+  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+  font-feature-settings:"kern" 1,"liga" 1;
+  line-height:1.75;
 }
 a{color:inherit}
 .wrap{width:min(1240px,calc(100% - 26px));margin:auto}
-.hero{padding:42px 0 24px}
+.hero{padding:34px 0 20px}
 .hero-panel{
   position:relative;
   overflow:hidden;
   border:1px solid var(--line);
-  border-radius:28px;
-  padding:clamp(24px,5vw,52px);
+  border-radius:24px;
+  padding:clamp(24px,4.2vw,46px);
   background:linear-gradient(135deg,rgba(19,38,60,.97),rgba(9,21,35,.97));
   box-shadow:var(--shadow);
 }
@@ -57,28 +58,49 @@ a{color:inherit}
 .kicker{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:6px 13px;
+  gap:9px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:#e7a0a6;
+  font-weight:700;
+  font-size:.84rem;
+  letter-spacing:.01em;
+}
+.kicker::before{
+  content:"";
+  width:28px;
+  height:2px;
   border-radius:999px;
-  border:1px solid rgba(236,61,75,.45);
-  background:rgba(236,61,75,.12);
-  color:#ffb9be;
-  font-weight:800;
-  font-size:.9rem;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
 }
 h1{
-  margin:17px 0 10px;
-  font-size:clamp(2rem,6vw,4.7rem);
-  line-height:1.2;
-  letter-spacing:-.02em;
-  max-width:940px;
+  margin:14px 0 11px;
+  font-size:clamp(1.9rem,4.2vw,3.45rem);
+  line-height:1.34;
+  letter-spacing:0;
+  font-weight:750;
+  max-width:900px;
+  text-wrap:balance;
 }
 .hero-text{
-  max-width:850px;
+  max-width:760px;
   margin:0;
-  color:#d7e0ec;
-  font-size:clamp(1rem,2vw,1.14rem);
+  color:#cbd6e3;
+  font-size:clamp(.96rem,1.6vw,1.07rem);
+  font-weight:400;
 }
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  margin-top:18px;
+  color:#8fa3ba;
+  font-size:.82rem;
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:7px}
+.hero-meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:#52759a}
+.hero-meta span:first-child::before{background:var(--accent)}
 .hero-stats{
   display:flex;
   gap:10px;
@@ -178,8 +200,9 @@ h1{
 .card-copy{padding:17px}
 .card-copy h2{
   margin:0;
-  font-size:clamp(1.25rem,2.4vw,1.65rem);
-  line-height:1.35;
+  font-size:clamp(1.18rem,2.1vw,1.52rem);
+  line-height:1.45;
+  font-weight:750;
 }
 .card-copy p{
   margin:4px 0 15px;
@@ -219,7 +242,7 @@ footer{
 }
 @media(max-width:620px){
   .hero{padding-top:14px}
-  .hero-panel{border-radius:20px;padding:21px 17px}
+  .hero-panel{border-radius:18px;padding:22px 18px}
   .search-row{align-items:stretch;flex-direction:column}
   .count-label{text-align:center}
   .grid{grid-template-columns:1fr;gap:14px}
@@ -236,16 +259,16 @@ footer{
   padding:16px;
   border:1px solid rgba(255,255,255,.16);
   border-radius:22px;
-  background:linear-gradient(135deg,rgba(236,61,75,.18),rgba(7,17,31,.78));
+  background:linear-gradient(135deg,rgba(236,61,75,.10),rgba(7,17,31,.74));
   box-shadow:0 12px 34px rgba(0,0,0,.20);
 }
 .signature-copy{min-width:0}
 .signature-label{
   display:block;
   margin-bottom:5px;
-  color:#ffb9be;
-  font-size:.86rem;
-  font-weight:800;
+  color:#dba0a5;
+  font-size:.82rem;
+  font-weight:700;
 }
 .signature-link{
   display:inline-block;
@@ -319,9 +342,10 @@ footer{
 <img alt="کد QR کانال تلگرام ALMO_MO" class="signature-qr" src="assets/telegram_qr_almo_mo_precise.png"/>
 </a>
 </section>
-<span class="kicker">فهرست مرکزی بسته‌های حمایتی</span>
-<h1>صدای زندانیان در خطر اعدام باشیم</h1>
-<p class="hero-text">برای ورود به بسته هر فرد یا پرونده، روی تصویر، نام یا دکمه همان کارت بزنید.</p>
+<span class="kicker">فهرست مرکزی کمپین‌ها</span>
+<h1>کمپین‌های حمایت از زندانیان در معرض اعدام</h1>
+<p class="hero-text">برای مشاهده پوسترها و متن‌های آماده هر فرد یا پرونده، کارت مربوط به آن را انتخاب کنید.</p>
+<div class="hero-meta"><span>۳۸ پرونده فعال</span><span>جست‌وجو به فارسی و انگلیسی</span><span>دسترسی مستقیم به بسته هر پرونده</span></div>
 </section>
 </div>
 </header>
