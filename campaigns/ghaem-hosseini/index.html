@@ -13,8 +13,8 @@
   --gold:#e3ad42;--green:#42c98a;--shadow:0 22px 68px rgba(0,0,0,.42)
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;max-width:100%;overflow-x:hidden}
-body{margin:0;min-height:100vh;color:var(--text);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.75;background:radial-gradient(circle at 85% -5%,rgba(47,147,221,.2),transparent 25%),radial-gradient(circle at 8% 30%,rgba(201,40,46,.16),transparent 28%),linear-gradient(180deg,#070b12,#0c131d 50%,#070b12);overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;max-width:100%;overflow-x:clip}
+body{margin:0;min-height:100vh;color:var(--text);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.75;background:radial-gradient(circle at 85% -5%,rgba(47,147,221,.2),transparent 25%),radial-gradient(circle at 8% 30%,rgba(201,40,46,.16),transparent 28%),linear-gradient(180deg,#070b12,#0c131d 50%,#070b12);overflow-x:clip}
 a{color:inherit}.wrap{width:min(1180px,calc(100% - 24px));margin:auto;min-width:0}
 .topbar{padding:14px 0 0}
 .return{display:inline-flex;align-items:center;gap:7px;text-decoration:none;border:1px solid var(--line);background:#101925;padding:8px 13px;border-radius:11px;color:#d9e7f6;font-weight:800}
@@ -197,10 +197,8 @@ document.addEventListener("click",async event=>{
     const usable=unusedPool.length?unusedPool:pool;
     if(!usable.length)return;
     const chosen=usable[Math.floor(Math.random()*usable.length)];
-    filter="all";unusedOnly=false;search.value="";
-    document.querySelectorAll("[data-filter]").forEach(btn=>btn.classList.toggle("active",btn.dataset.filter==="all"));
-    unusedBtn.classList.remove("active");
-    page=Math.floor(ITEMS.indexOf(chosen)/PAGE_SIZE)+1;
+    const index=pool.findIndex(x=>x.id===chosen.id);
+    page=Math.floor(index/PAGE_SIZE)+1;
     render();
     requestAnimationFrame(()=>{const card=document.querySelector(`[data-id="${chosen.id}"]`);if(card){card.classList.add("flash");card.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>card.classList.remove("flash"),2200);}});
     return;
