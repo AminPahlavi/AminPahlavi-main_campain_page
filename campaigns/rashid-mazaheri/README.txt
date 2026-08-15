@@ -1,0 +1,1 @@
+Standalone Rashid Mazaheri GitHub campaign page. Layout, controls, buttons, card actions, used-text checkbox, pagination and random behavior follow the supplied Farzad Ghaderi reference. Persian poster is the main hero/profile image.
