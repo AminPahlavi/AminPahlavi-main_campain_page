@@ -1,5 +1,9 @@
-Master update contents:
-1) index.html -> replace repository root index.html
-2) assets/rashid-mazaheri.png -> new Rashid master-card image (Persian poster)
-3) campaigns/rashid-mazaheri/ -> Rashid campaign folder, master-ready with return button
-Farzad Ghaderi remains in the master list but is visually marked: ✓ آزاد شد.
+MASTER UPDATE — VAHID KHEDRI KHAH
+
+Merge these paths into the existing master repository:
+- index.html
+- assets/vahid-khedri-khah.png
+- campaigns/vahid-khedri-khah/
+
+The Vahid campaign folder contains the full 1,000-text package, 15 English posters, Persian main poster, and real photos.
+The campaign page includes the red return button to ../../index.html.
