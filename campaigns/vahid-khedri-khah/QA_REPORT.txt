@@ -1,0 +1,45 @@
+Vahid Khedri Khah standalone campaign QA — FINAL NATURAL LANGUAGE PASS
+
+Total texts: 1000 (400 Direct / 300 Reply / 300 Quote)
+Direct chars: min 270, max 280, mean 275.0
+Reply chars: min 270, max 280, mean 274.8
+Quote visible payload chars: min 270, max 280, mean 275.3
+Replies primary list: 225 (75.0%)
+Replies secondary list: 75 (25.0%)
+Quotes primary list: 300 (100%)
+All texts contain #VAHIDKHEDRIKHAH and #StopExecutionsInIran: YES
+All texts contain 1-2 approved mentions: YES
+Quote payload = text + exactly two line breaks + full source URL: YES
+Reply intents preserve exact supplied status IDs: YES
+Exact duplicate visible payloads: 0
+No verified final death sentence asserted: YES
+Awkward-pattern scan: {"plus demanding": 0, "and securing": 0, "together alongside": 0, "with insistence on": 0, "and insisting on": 0, "at twelve, already": 0, "Share urgent": 0, "Share stark": 0, "parents cannot advocate now": 0, "while the risk remains while": 0}
+Standalone page: no return-to-master button.
+English poster files currently available: 11
+Persian poster: 1
+Original real photos: 4
+Repeated normalized 5-grams: 1184
+Repeated normalized 6-grams: 97
+Repeated normalized 7-grams: 22
+Repeated normalized 8-grams: 8
+Repeated normalized 9-grams: 3
+Repeated normalized 10-grams: 0
+Duplicate first-5-word openings: 7
+Duplicate first-6-word openings: 1
+Duplicate first-7-word openings: 0
+Duplicate first-8-word openings: 0
+Duplicate first-9-word openings: 0
+Duplicate first-10-word openings: 0
+Final micro-edit: removed remaining obvious tautologies/repetitive phrasing in sampled texts.
+
+REVISED UI / MENTION QA
+Bulk Direct/Reply/Quote download controls removed: YES
+Separate bulk text-download folder removed: YES
+Removed disfavored mention occurrences in campaign text: 0 remaining
+Disfavored mention entries replaced: 68
+Duplicate mention inside any single text: 0
+Texts outside 1-2 mention rule: 0
+Texts outside 270-280 character range: 0
+Reply intents out of sync with text/status ID: 0
+Quote intents out of sync with exact text + two line breaks + source URL: 0
+Replacement handles used for removed slots: @amnesty / @FoxNews / @NEWSMAX / @UNWatch (balanced, with no same-text duplication).
